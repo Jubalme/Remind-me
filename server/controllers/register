@@ -1,0 +1,15 @@
+function signup(req,res){
+    const {username,password,email,first_name,last_name,date_of_birth}=req.body;
+    if(!username|| !password|| !email ||!first_name|| !last_name|| ! date_of_birth){
+        res.status(400);
+        res.send("All fields are required to be filled.");
+    }
+    else{
+        res.status(500);
+        res.send( username+ " "+ " welcome to your remind_me");
+    }
+}
+
+
+
+module.exports=signup;
