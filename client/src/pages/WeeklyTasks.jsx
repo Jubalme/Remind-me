@@ -2,7 +2,7 @@
 
 function WeeklyTasks() {
   return (
-    <div>WeeklyTasks</div>
+    <div>Weekly Tasks page</div>
   )
 }
 

@@ -1,11 +1,8 @@
 
-import Nav from "../components/Header/Nav"
+
 function About() {
   return (
-  
-    <div>
-        <Nav/>
-      About page</div>
+    <div>About page</div>
   )
 }
 

@@ -2,7 +2,7 @@
 
 function DailyTasks() {
   return (
-    <div>DailyTasks</div>
+    <div>Daily Tasks pages</div>
   )
 }
 

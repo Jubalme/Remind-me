@@ -1,15 +1,12 @@
-
-import Nav from "../components/Header/Nav"
-
-
+import Nav from "../componenets/header/Nav"
+//import {Link} from "react-router-dom"
 function Home() {
-    return (
-        <div>
-            <Nav />
-        This is a Home page
-         
-        </div>
-    )
+  return (
+   <div>
+<Nav />
+
+   </div>
+  )
 }
 
 export default Home

@@ -2,7 +2,7 @@
 
 function CalenderView() {
   return (
-    <div>CalenderView</div>
+    <div>Calender View page</div>
   )
 }
 
