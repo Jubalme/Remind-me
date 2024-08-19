@@ -1,8 +1,13 @@
 
 
+
 function About() {
   return (
-    <div>About page</div>
+    <div>
+      <h1 className='text-xl font-bold text-red-500'> About page</h1>
+
+
+    </div>
   )
 }
 
