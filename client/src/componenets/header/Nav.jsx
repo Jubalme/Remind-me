@@ -3,12 +3,12 @@ import Logo from "./Logo"
 import Webname from "./Webname"
 function Nav() {
   return (
-   <div className="container bg-purple-100">
+   <div >
     <div>
     <Logo /> 
     <Webname /> 
     </div>
-    <div  className='absolute top-10 right-20 bg-purple-100'>
+    <div  >
 
     
         <ul className='flex space-x-4'>
