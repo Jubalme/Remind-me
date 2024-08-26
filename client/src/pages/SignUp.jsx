@@ -14,17 +14,23 @@ const schema = yup.object().shape({
   password: yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
 });
 
-export default function RegisterForm(isAuthenticated) {
+ function SignUp(onAuth) {
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
 
+
+
   const onSubmit = (data) => {
-    isAuthenticated(isAuthenticated=true)
-    navigate('/dashboard');
+    // Simulate successful signup
     console.log(data);
-    
+    if (onAuth && typeof onAuth === 'function') {
+      onAuth(true);
+      navigate('/dashboard'); // Redirect to the dashboard
+    } else {
+      console.error('onAuth is not a function');
+    }
   };
 
   return (
@@ -89,3 +95,4 @@ export default function RegisterForm(isAuthenticated) {
     </div>
   );
 }
+export default SignUp;

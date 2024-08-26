@@ -27,7 +27,7 @@ const Header1 = ({ isAuthenticated }) => {
         <NavLink to="/about" className="hover:underline">
           About
         </NavLink>
-        <NavLink to="/register" className="hover:underline">
+        <NavLink to="/signup" className="hover:underline">
           Register
         </NavLink>
         <NavLink to="/login" className="hover:underline">

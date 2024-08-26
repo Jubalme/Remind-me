@@ -18,7 +18,7 @@ function Home() {
     <p className="mt-4 text-gray-600">
       Discover a world of opportunities and features tailored just for you. Register now and become part of a thriving community that values growth, innovation, and collaboration. Don’t miss out on the benefits – sign up and start exploring today!
     </p>
-    <a href="/register" className="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-blue-700 transition">
+    <a href="/signup" className="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-full shadow-lg hover:bg-blue-700 transition">
       Register Now
     </a>
   </div>
