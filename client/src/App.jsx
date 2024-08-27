@@ -52,8 +52,8 @@ import SignUp from "./pages/SignUp";
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const handleAuthentication = (status) => {
-    setIsAuthenticated(status);
+  const handleAuthentication = () => {
+    setIsAuthenticated(true);
     toast.success('Successfully authenticated!', {
       position: "top-right",
       autoClose: 3000,

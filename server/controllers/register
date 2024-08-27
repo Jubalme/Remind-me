@@ -1,6 +1,6 @@
 function signup(req,res){
-    const {username,password,email,first_name,last_name,date_of_birth}=req.body;
-    if(!username|| !password|| !email ||!first_name|| !last_name|| ! date_of_birth){
+    const {username,password,email,first_name,last_name}=req.body;
+    if(!username|| !password|| !email ||!first_name|| !last_name){
         res.status(400);
         res.send("All fields are required to be filled.");
     }

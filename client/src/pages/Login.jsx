@@ -2,6 +2,7 @@
 import { useForm } from 'react-hook-form';
 import { Navigate } from 'react-router-dom';
 
+// eslint-disable-next-line react/prop-types
 function Login({ onAuth }) {
   const { register, handleSubmit, formState: { errors } } = useForm();
 

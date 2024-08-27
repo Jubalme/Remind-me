@@ -27,9 +27,8 @@ const Header1 = ({ isAuthenticated }) => {
         <NavLink to="/about" className="hover:underline">
           About
         </NavLink>
-        <NavLink to="/signup" className="hover:underline">
-          Register
-        </NavLink>
+        {!isAuthenticated && <NavLink to="/signup" className="mr-4">Register</NavLink>}
+        
         <NavLink to="/login" className="hover:underline">
           Login
         </NavLink>
@@ -52,6 +51,10 @@ const Header1 = ({ isAuthenticated }) => {
           Logout
         </button>
       )}
+
+ 
+    
+
     </header>
   );
 };
