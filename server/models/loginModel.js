@@ -23,10 +23,7 @@ const loginSchema = mongoose.Schema(
     last_name: {
       type: String,
     },
-    date_of_birth: {
-      type: Number,
-      specialchars: true,
-    },
+
   },
   {
     timestamps: true,

@@ -3,9 +3,10 @@ function signup(req,res){
     if(!username|| !password|| !email ||!first_name|| !last_name){
         res.status(400);
         res.send("All fields are required to be filled.");
+
     }
     else{
-        res.status(500);
+        res.status(200);
         res.send( username+ " "+ " welcome to your remind_me");
     }
 }
