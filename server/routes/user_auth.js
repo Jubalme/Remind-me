@@ -1,9 +1,9 @@
 const express = require('express');
 const router= express.Router();
-const signup=require('../controllers/register.js' )
+const {signup,login}=require('../controllers/register.js' )
 
 router.post('/signup',signup);
-
+router.post('/login',login);
 
 
 
