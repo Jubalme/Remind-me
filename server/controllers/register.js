@@ -1,35 +1,43 @@
+const model = require('../models/loginModel')
+const send=require('../utilities/sendMail')
 
-function signup=async (req ,res )=>{
-    try{
-        const {username,password,email,first_name,last_name}=req.body;
-        if(!username|| !password|| !email ||!first_name|| !last_name){
+
+async function signup(req, res) {
+    try {
+        const { first_name, last_name, username, email, password } = req.body;
+        if (!first_name || !last_name || !username || !email || !password) {
             res.status(400);
+            console.log(data)
             res.send("All fields are required to be filled.");
-            const model= require('../models/loginModel.js')
+
         }
-        else{
+        else {
+
+            send(email);
+
+            send
             res.status(200);
-            res.send( username+ " "+ " welcome to your remind_me");
+            res.send(username + " " + " welcome to your remind_me");
         }
-      }
-      catch(error){
-          res.status(500).json({message: error.message});
-      }
+    }
+    catch (error) {
+        res.status(500).json({ message: error.message });
+    }
 };
 
-function login(req,res){
-    const {username,password}=req.body;
-    if(!username||!password){
+function login(req, res) {
+    const { username, password } = req.body;
+    if (!username || !password) {
         res.status(400);
         res.send("All fields are required to be filled.");
     }
-    else{
-        res.send(username+" "+ "welcome to your remind_me");
+    else {
+        res.send(username + " " + "welcome to your remind_me");
     }
 }
 
 
-module.exports={
+module.exports = {
     signup,
     login
 };

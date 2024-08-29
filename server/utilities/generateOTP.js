@@ -1,7 +1,7 @@
-const otpgenerator=require("otp-generator");
+const otp_generator=require("otp-generator");
 
 const generateOTP=()=>{
-    const OTP=otpGenerator.generate(6,{
+    const OTP=otp_generator.generate(6,{
         upperCaseAlphabets:false,
         specialChars: false,
     });
