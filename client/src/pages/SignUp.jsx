@@ -52,7 +52,7 @@ function SignUp({ onAuth }) {
     // If OTP is 6 digits long, send it to the server
     if (enteredOtp.length === 6) {
       try {
-        const otpResponse = await axios.post('http://localhost:4545/api/user/verify-otp', {
+        const otpResponse = await axios.post('http://localhost:4545/api/user/verify', {
           email: userEmail,
           otp: enteredOtp,
         });
