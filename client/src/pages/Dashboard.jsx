@@ -1,6 +1,16 @@
+import Nav2 from "../componenets/header/Nav2"
+
 const Dashboard = () => {
-    return <div>Dashboard Page (Protected)</div>;
-  };
+  return (
+    <div>
+<Nav2 />
+    </div>
+  )
+
+};
+
+
+ 
   
   export default Dashboard;
   

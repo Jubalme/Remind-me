@@ -21,4 +21,4 @@ function Nav2() {
   )
 }
 
-export default Nav2
+export default Nav2;
