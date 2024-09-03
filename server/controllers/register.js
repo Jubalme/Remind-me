@@ -9,7 +9,7 @@ async function signup(req, res) {
         const { first_name, last_name, username, email, password } = req.body;
 
         // Validate request fields
-        if (!first_name || !last_name || !username || !email || !password) {
+        if (!first_name  ||!last_name || !username || !email || !password) {
             res.status(400).json({ message: "All fields are required to be filled." });
             return;
         }
@@ -24,7 +24,7 @@ async function signup(req, res) {
         const hashedPassword = await bcrypt.hash(password, 10);
 
         // Send OTP to user's email
-        const emailResult = await sendEmail(req, res, email);
+        const emailResult = await sendEmail(email);
         if (!emailResult) {
             return res.status(500).json({ message: 'Error sending OTP email' });
         }
@@ -52,7 +52,7 @@ async function signup(req, res) {
 }
 
 // Handle OTP verification
-const verifyOtp = async (req, res, email, otp) => {
+const verifyOtp = async (req, res) => {
     try {
         const { email, otp } = req.body;
 
@@ -83,12 +83,33 @@ const verifyOtp = async (req, res, email, otp) => {
     }
 }
 
-function login(req, res) {
-    const { username, password } = req.body;
-    if (!username || !password) {
-        return res.status(400).json({ message: "All fields are required to be filled." });
-    } else {
-        return res.send(`${username} welcome to your remind_me`);
+async function login(req, res) {
+    try {
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).json({ message: "All fields are required to be filled." });
+        }
+
+        // Check if user exists
+        const user = await model.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Compare passwords
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(400).json({ message: 'Invalid credentials' });
+        }
+
+        // Generate JWT token
+        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+        return res.status(200).json({ message: 'Login successful', token });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Server error' });
     }
 }
 

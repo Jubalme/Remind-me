@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header1 from "./componenets/header/Header1";
 import Home from "./pages/Home";
@@ -16,7 +16,7 @@ import AddTask from "./pages/AddTask";
 import CalenderView from "./pages/CalenderView";
 import MyNote from "./pages/MyNote";
 import MyProfile from "./pages/MyProfile";
-import Logout from "./pages/Logout";
+
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -56,7 +56,6 @@ const App = () => {
              <Route path="/Add" element={<AddTask />} />
              <Route path="/Notes" element={<MyNote />} />
              <Route path="/Profile" element={<MyProfile />} />
-             <Route path="/Logout" element={<Logout />} />
    
       </Routes>
     </Router>
