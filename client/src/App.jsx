@@ -10,7 +10,13 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import DashboardPage from "./pages/DashboardPage";
-
+import DailyTasks from './componenets/MenuItems/DailyTasks';
+import WeeklyTasks from './componenets/MenuItems/WeeklyTasks';
+import CalenderView from './componenets/MenuItems/CalenderView';
+import AddTask from './componenets/MenuItems/AddTask';
+import MyNote from './componenets/MenuItems/MyNote';
+import MyProfile from './componenets/MenuItems/MyProfile';
+import CompletedTasks from './componenets/MenuItems/CompletedTasks';
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -44,7 +50,14 @@ const App = () => {
           path="/dashboard"
           element={isAuthenticated ? <DashboardPage /> : <Navigate to="/login" />}
         />
-   
+    <Route path="/Daily" element={<DailyTasks />} />
+       <Route path="/Weekly" element={<WeeklyTasks />} />
+       <Route path="/Calender" element={<CalenderView />} />
+             <Route path="/Add" element={<AddTask />} />
+             <Route path="/Notes" element={<MyNote />} />
+             <Route path="/Profile" element={<MyProfile />} />
+             <Route path="/Completed" element={<CompletedTasks />} />
+             
       </Routes>
     </Router>
   );
